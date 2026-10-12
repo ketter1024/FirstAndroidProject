@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Lab handouts from the teacher, kept out of the public repo
+/附录/

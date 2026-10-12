@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Lab 2 - ConstraintLayout experiment 2 (SpaceX booking screen).
+
+    ConstraintLayout features used here:
+      * a vertical guideline pins the left edge of the DCA / One Way /
+        Traveller blocks so they line up on one axis;
+      * a Barrier keeps the "One Way" row under whichever of DCA and MARS
+        ends lower;
+      * the tab bar and the DEPART button both stretch edge to edge with
+        layout_width="0dp";
+      * the double arrow image is centred on the parent, the galaxy image
+        carries the single arrow beside it.
+
+    Images come from res/drawable: space_station_icon, rocket_icon,
+    rover_icon, double_arrows, single_arrow and galaxy.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lab_content_bg">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <!--
+        Navy strip. It is empty, so fitsSystemWindows gives it exactly the
+        status bar inset as height and paints the status bar area navy, the way
+        the mockup shows.
+    -->
+    <TextView
+        android:id="@+id/statusStrip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/lab_spacex_navy"
+        android:fitsSystemWindows="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Tab bar -->
+    <LinearLayout
+        android:id="@+id/tabBar"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statusStrip">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/lab_tab_selected"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:contentDescription="Space Stations"
+                android:scaleType="fitCenter"
+                android:src="@drawable/space_station_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Space Stations"
+                android:textColor="@color/lab_tab_text"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:contentDescription="Flights"
+                android:scaleType="fitCenter"
+                android:src="@drawable/rocket_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Flights"
+                android:textColor="@color/lab_tab_text"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:contentDescription="Rovers"
+                android:scaleType="fitCenter"
+                android:src="@drawable/rover_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Rovers"
+                android:textColor="@color/lab_tab_text"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/tabDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/lab_tab_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabBar" />
+
+    <!-- Origin / destination -->
+    <TextView
+        android:id="@+id/tvDca"
+        android:layout_width="110dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/lab_spacex_green"
+        android:gravity="center"
+        android:text="DCA"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/tabDivider" />
+
+    <TextView
+        android:id="@+id/tvMars"
+        android:layout_width="110dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="28dp"
+        android:background="@color/lab_spacex_green"
+        android:gravity="center"
+        android:text="MARS"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDca"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvDca" />
+
+    <ImageView
+        android:id="@+id/imgArrows"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:contentDescription="Swap route"
+        android:scaleType="fitCenter"
+        android:src="@drawable/double_arrows"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDca"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvDca" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierTripRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tvDca,tvMars" />
+
+    <!-- Trip options -->
+    <LinearLayout
+        android:id="@+id/llOneWay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/oneway_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="6dp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/barrierTripRow">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="One Way"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+        <View
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/toggle_knob" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvTraveller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/lab_spacex_orange"
+        android:paddingStart="12dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="6dp"
+        android:text="1 Traveller"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/llOneWay"
+        app:layout_constraintTop_toBottomOf="@+id/llOneWay" />
+
+    <!-- Route illustration -->
+    <ImageView
+        android:id="@+id/imgGalaxy"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="64dp"
+        android:contentDescription="Destination"
+        android:scaleType="fitCenter"
+        android:src="@drawable/galaxy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTraveller" />
+
+    <ImageView
+        android:id="@+id/imgSingleArrow"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="30dp"
+        android:contentDescription="Route direction"
+        android:scaleType="fitCenter"
+        android:src="@drawable/single_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/imgGalaxy"
+        app:layout_constraintEnd_toStartOf="@+id/imgGalaxy" />
+
+    <TextView
+        android:id="@+id/btnDepart"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:background="@color/lab_spacex_green"
+        android:gravity="center"
+        android:text="DEPART"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

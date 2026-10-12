@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Lab 2 - LinearLayout experiment.
+
+    A 4x4 grid built out of nested LinearLayouts: the root is a vertical
+    LinearLayout holding four horizontal LinearLayout rows, and each row holds
+    four equally weighted cells (layout_weight="1"). Every cell draws the same
+    bordered background so the grid matches the mockup.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lab_grid_bg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout style="@style/LabGridRow">
+
+        <TextView
+            style="@style/LabGridCell"
+            android:text="One,One" />
+
+        <TextView
+            style="@style/LabGridCell"
+            android:text="One,Two" />
+
+        <TextView
+            style="@style/LabGridCell"
+            android:text="One,Three" />
+
+        <TextView
+            style="@style/LabGridCell"
+            android:text="One,Four" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LabGridRow">
+
+        <TextView
+            style="@style/LabGridCell"
+            android:text="Two,One" />
+
+        <TextView
+            style="@style/LabGridCell"
+            android:text="Two,Two" />
+
+        <TextView
+            style="@style/LabGridCell"
+            android:text="Two,Three" />
+
+        <TextView
+            style="@style/LabGridCell"
+            android:text="Two,Four" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LabGridRow">
+
+        <TextView
+            style="@style/LabGridCell"
+            android:text="Three,One" />
+
+        <TextView
+            style="@style/LabGridCell"
+            android:text="Three,Two" />
+
+        <TextView
+            style="@style/LabGridCell"
+            android:text="Three,Three" />
+
+        <TextView
+            style="@style/LabGridCell"
+            android:text="Three,Four" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LabGridRow">
+
+        <TextView
+            style="@style/LabGridCell"
+            android:text="Four,One" />
+
+        <TextView
+            style="@style/LabGridCell"
+            android:text="Four,Two" />
+
+        <TextView
+            style="@style/LabGridCell"
+            android:text="Four,Three" />
+
+        <TextView
+            style="@style/LabGridCell"
+            android:text="Four,Four" />
+    </LinearLayout>
+
+</LinearLayout>

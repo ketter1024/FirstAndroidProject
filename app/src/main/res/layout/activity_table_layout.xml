@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Lab 2 - TableLayout experiment.
+
+    A menu rendered as a table with three columns:
+      column 0 - the "X" marker that only Import/Export carry
+      column 1 - the item label, this is the stretched column
+      column 2 - the keyboard shortcut, right aligned in a fixed width column
+
+    The first row is the "Hello TableLayout" header and spans all three
+    columns; the two full width rows between the groups are the separators.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lab_menu_bg"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+
+        <!-- Header row -->
+        <TableRow>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="3"
+                android:background="@color/lab_menu_header"
+                android:paddingStart="8dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="6dp"
+                android:text="Hello TableLayout"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                style="@style/LabMenuMarker"
+                android:text="" />
+
+            <TextView
+                style="@style/LabMenuItem"
+                android:text="Open..." />
+
+            <TextView
+                style="@style/LabMenuShortcut"
+                android:text="Ctrl-O" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                style="@style/LabMenuMarker"
+                android:text="" />
+
+            <TextView
+                style="@style/LabMenuItem"
+                android:text="Save..." />
+
+            <TextView
+                style="@style/LabMenuShortcut"
+                android:text="Ctrl-S" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                style="@style/LabMenuMarker"
+                android:text="" />
+
+            <TextView
+                style="@style/LabMenuItem"
+                android:text="Save As..." />
+
+            <TextView
+                style="@style/LabMenuShortcut"
+                android:text="Ctrl-Shift-S" />
+        </TableRow>
+
+        <!-- Separator -->
+        <TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_span="3"
+                android:background="@color/lab_menu_divider" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                style="@style/LabMenuMarker"
+                android:text="X" />
+
+            <TextView
+                style="@style/LabMenuItem"
+                android:text="Import..." />
+
+            <TextView
+                style="@style/LabMenuShortcut"
+                android:text="" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                style="@style/LabMenuMarker"
+                android:text="X" />
+
+            <TextView
+                style="@style/LabMenuItem"
+                android:text="Export..." />
+
+            <TextView
+                style="@style/LabMenuShortcut"
+                android:text="Ctrl-E" />
+        </TableRow>
+
+        <!-- Separator -->
+        <TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_span="3"
+                android:background="@color/lab_menu_divider" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                style="@style/LabMenuMarker"
+                android:text="" />
+
+            <TextView
+                style="@style/LabMenuItem"
+                android:text="Quit" />
+
+            <TextView
+                style="@style/LabMenuShortcut"
+                android:text="" />
+        </TableRow>
+
+    </TableLayout>
+
+</ScrollView>
