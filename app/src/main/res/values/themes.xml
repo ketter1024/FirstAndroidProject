@@ -2,4 +2,33 @@
 <resources>
 
     <style name="Theme.FirstProject" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <!--
+        Lab 2 screens. targetSdk 37 means the window is always edge to edge, so
+        none of these use an action bar: the title is part of the layout and
+        every screen deals with the system bar insets itself, either by putting
+        android:fitsSystemWindows="true" on the layout root or on the top bar
+        that should extend behind the status bar.
+    -->
+
+    <!-- LinearLayout experiment: black screen -->
+    <style name="Theme.FirstProject.Dark" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/lab_grid_bg</item>
+    </style>
+
+    <!-- TableLayout experiment: dark menu -->
+    <style name="Theme.FirstProject.Menu" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/lab_menu_bg</item>
+    </style>
+
+    <!-- ConstraintLayout experiment 1: light content with a teal title bar -->
+    <style name="Theme.FirstProject.Teal" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/lab_content_bg</item>
+    </style>
+
+    <!-- ConstraintLayout experiment 2: light content with a navy status strip -->
+    <style name="Theme.FirstProject.SpaceX" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/lab_content_bg</item>
+    </style>
+
 </resources>

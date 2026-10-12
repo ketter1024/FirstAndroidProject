@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">FirstProject</string>
+
+    <!-- Lab 2 entry screen -->
+    <string name="title_lab_menu">实验二 Android界面布局</string>
+    <string name="menu_linear">1　线性布局 LinearLayout</string>
+    <string name="menu_table">2　表格布局 TableLayout</string>
+    <string name="menu_constraint1">3　约束布局1 ConstraintLayout（计算器）</string>
+    <string name="menu_constraint2">4　约束布局2 ConstraintLayout（SpaceX）</string>
+
+    <!-- Lab 2 activity labels -->
+    <string name="title_linear_layout">LinearLayout</string>
+    <string name="title_table_layout">TableLayout</string>
+    <string name="title_constraint_layout1">ConstraintLayoutTest</string>
+    <string name="title_constraint_layout2">SpaceX</string>
 </resources>

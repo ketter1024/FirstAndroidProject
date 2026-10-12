@@ -1,47 +1,32 @@
 package com.example.firstproject
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.firstproject.ui.theme.FirstProjectTheme
+import android.widget.Button
 
-class MainActivity : ComponentActivity() {
+/**
+ * Lab 2 entry screen.
+ *
+ * Each experiment lives in its own activity, so this screen just offers one
+ * button per experiment and starts the matching activity. See
+ * res/layout/activity_main.xml.
+ */
+class MainActivity : Activity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            FirstProjectTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
+        setContentView(R.layout.activity_main)
+
+        openOnClick(R.id.btnLinear, LinearLayoutActivity::class.java)
+        openOnClick(R.id.btnTable, TableLayoutActivity::class.java)
+        openOnClick(R.id.btnConstraint1, ConstraintLayout1Activity::class.java)
+        openOnClick(R.id.btnConstraint2, ConstraintLayout2Activity::class.java)
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    FirstProjectTheme {
-        Greeting("Android")
+    private fun openOnClick(buttonId: Int, target: Class<*>) {
+        findViewById<Button>(buttonId).setOnClickListener {
+            startActivity(Intent(this, target))
+        }
     }
 }
