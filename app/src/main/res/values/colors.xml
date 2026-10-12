@@ -7,4 +7,33 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Lab 2 - Android layout experiments -->
+    <!-- LinearLayout experiment -->
+    <color name="lab_grid_bg">#FF000000</color>
+    <color name="lab_cell_border">#FFEEEEEE</color>
+    <color name="lab_cell_text">#FFDDDDDD</color>
+
+    <!-- TableLayout experiment -->
+    <color name="lab_menu_bg">#FF232323</color>
+    <color name="lab_menu_header">#FF979298</color>
+    <color name="lab_menu_text">#FFCCCCCC</color>
+    <color name="lab_menu_divider">#FF9E9E9E</color>
+
+    <!-- ConstraintLayout experiment 1 (calculator) -->
+    <color name="lab_teal">#FF018578</color>
+    <color name="lab_teal_dark">#FF01665B</color>
+    <color name="lab_content_bg">#FFFAFAFA</color>
+    <color name="lab_display_bg">#FFBDBA99</color>
+    <color name="lab_key_bg">#FFD8D8D8</color>
+    <color name="lab_key_stroke">#FFBFBFBF</color>
+    <color name="lab_text_dark">#FF424242</color>
+
+    <!-- ConstraintLayout experiment 2 (SpaceX) -->
+    <color name="lab_spacex_navy">#FF323251</color>
+    <color name="lab_spacex_green">#FF2B663A</color>
+    <color name="lab_spacex_orange">#FFB76426</color>
+    <color name="lab_tab_selected">#FFE0E0E0</color>
+    <color name="lab_tab_text">#FF757575</color>
+    <color name="lab_tab_divider">#FFC8C8C8</color>
 </resources>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- LinearLayout experiment: one horizontal row of the 4x4 grid -->
+    <style name="LabGridRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!-- LinearLayout experiment: a single bordered cell, all four share the width -->
+    <style name="LabGridCell">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:background">@drawable/cell_border</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/lab_cell_text</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- TableLayout experiment rows -->
+    <style name="LabMenuMarker">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:paddingTop">7dp</item>
+        <item name="android:paddingBottom">7dp</item>
+        <item name="android:textColor">@color/lab_menu_text</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="LabMenuItem">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:paddingTop">7dp</item>
+        <item name="android:paddingBottom">7dp</item>
+        <item name="android:textColor">@color/lab_menu_text</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="LabMenuShortcut">
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">7dp</item>
+        <item name="android:paddingBottom">7dp</item>
+        <item name="android:gravity">end</item>
+        <item name="android:textColor">@color/lab_menu_text</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- Entry screen: one button per experiment -->
+    <style name="LabMenuButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:background">@color/lab_teal</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- ConstraintLayout experiment 1: calculator key -->
+    <style name="LabKey">
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:background">@drawable/key_bg</item>
+        <item name="android:textColor">@color/lab_text_dark</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+</resources>

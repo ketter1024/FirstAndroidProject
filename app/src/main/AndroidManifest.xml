@@ -11,18 +11,47 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstProject">
+
+        <!-- Lab 2 entry screen, one button per experiment -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.FirstProject"
-            android:windowSoftInputMode="adjustResize">
+            android:label="@string/title_lab_menu"
+            android:theme="@style/Theme.FirstProject.Teal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Lab 2 - LinearLayout experiment -->
+        <activity
+            android:name=".LinearLayoutActivity"
+            android:exported="false"
+            android:label="@string/title_linear_layout"
+            android:theme="@style/Theme.FirstProject.Dark" />
+
+        <!-- Lab 2 - TableLayout experiment -->
+        <activity
+            android:name=".TableLayoutActivity"
+            android:exported="false"
+            android:label="@string/title_table_layout"
+            android:theme="@style/Theme.FirstProject.Menu" />
+
+        <!-- Lab 2 - ConstraintLayout experiment 1, the calculator -->
+        <activity
+            android:name=".ConstraintLayout1Activity"
+            android:exported="false"
+            android:label="@string/title_constraint_layout1"
+            android:theme="@style/Theme.FirstProject.Teal" />
+
+        <!-- Lab 2 - ConstraintLayout experiment 2, the SpaceX screen -->
+        <activity
+            android:name=".ConstraintLayout2Activity"
+            android:exported="false"
+            android:label="@string/title_constraint_layout2"
+            android:theme="@style/Theme.FirstProject.SpaceX" />
     </application>
 
 </manifest>

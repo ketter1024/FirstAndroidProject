@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Lab 2 - ConstraintLayout experiment 1 (calculator).
+
+    Everything is placed with ConstraintLayout constraints only:
+      * the keys form four horizontal chains (chainStyle="spread"), which is
+        what spreads the four keys of a row evenly between the screen edges;
+      * each row below is anchored to the bottom of the row above it;
+      * the display bar is stretched between the parent's left and right edges
+        with layout_width="0dp".
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lab_content_bg">
+
+    <!--
+        Title bar. fitsSystemWindows makes this view take the status bar inset
+        as its own top padding, so the teal background runs all the way up
+        behind the status bar exactly like the action bar in the mockup.
+    -->
+    <LinearLayout
+        android:id="@+id/titleBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/lab_teal"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp"
+            android:text="ConstraintLayoutTest"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/labelInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Input"
+        android:textColor="@color/lab_text_dark"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleBar" />
+
+    <TextView
+        android:id="@+id/tvDisplay"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/lab_display_bg"
+        android:gravity="end|center_vertical"
+        android:paddingEnd="12dp"
+        android:text="0.0"
+        android:textColor="@color/lab_text_dark"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelInput" />
+
+    <!-- Row 1: 7 8 9 divide -->
+    <Button
+        android:id="@+id/btn7"
+        style="@style/LabKey"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:text="7"
+        app:layout_constraintEnd_toStartOf="@+id/btn8"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplay" />
+
+    <Button
+        android:id="@+id/btn8"
+        style="@style/LabKey"
+        android:layout_marginTop="40dp"
+        android:text="8"
+        app:layout_constraintEnd_toStartOf="@+id/btn9"
+        app:layout_constraintStart_toEndOf="@+id/btn7"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplay" />
+
+    <Button
+        android:id="@+id/btn9"
+        style="@style/LabKey"
+        android:layout_marginTop="40dp"
+        android:text="9"
+        app:layout_constraintEnd_toStartOf="@+id/btnDiv"
+        app:layout_constraintStart_toEndOf="@+id/btn8"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplay" />
+
+    <Button
+        android:id="@+id/btnDiv"
+        style="@style/LabKey"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:text="&#247;"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn9"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplay" />
+
+    <!-- Row 2: 4 5 6 multiply -->
+    <Button
+        android:id="@+id/btn4"
+        style="@style/LabKey"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:text="4"
+        app:layout_constraintEnd_toStartOf="@+id/btn5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn7" />
+
+    <Button
+        android:id="@+id/btn5"
+        style="@style/LabKey"
+        android:layout_marginTop="36dp"
+        android:text="5"
+        app:layout_constraintEnd_toStartOf="@+id/btn6"
+        app:layout_constraintStart_toEndOf="@+id/btn4"
+        app:layout_constraintTop_toBottomOf="@+id/btn8" />
+
+    <Button
+        android:id="@+id/btn6"
+        style="@style/LabKey"
+        android:layout_marginTop="36dp"
+        android:text="6"
+        app:layout_constraintEnd_toStartOf="@+id/btnMul"
+        app:layout_constraintStart_toEndOf="@+id/btn5"
+        app:layout_constraintTop_toBottomOf="@+id/btn9" />
+
+    <Button
+        android:id="@+id/btnMul"
+        style="@style/LabKey"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:text="&#215;"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn6"
+        app:layout_constraintTop_toBottomOf="@+id/btnDiv" />
+
+    <!-- Row 3: 1 2 3 plus -->
+    <Button
+        android:id="@+id/btn1"
+        style="@style/LabKey"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:text="1"
+        app:layout_constraintEnd_toStartOf="@+id/btn2"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn4" />
+
+    <Button
+        android:id="@+id/btn2"
+        style="@style/LabKey"
+        android:layout_marginTop="36dp"
+        android:text="2"
+        app:layout_constraintEnd_toStartOf="@+id/btn3"
+        app:layout_constraintStart_toEndOf="@+id/btn1"
+        app:layout_constraintTop_toBottomOf="@+id/btn5" />
+
+    <Button
+        android:id="@+id/btn3"
+        style="@style/LabKey"
+        android:layout_marginTop="36dp"
+        android:text="3"
+        app:layout_constraintEnd_toStartOf="@+id/btnPlus"
+        app:layout_constraintStart_toEndOf="@+id/btn2"
+        app:layout_constraintTop_toBottomOf="@+id/btn6" />
+
+    <Button
+        android:id="@+id/btnPlus"
+        style="@style/LabKey"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:text="+"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn3"
+        app:layout_constraintTop_toBottomOf="@+id/btnMul" />
+
+    <!-- Row 4: . 0 = minus -->
+    <Button
+        android:id="@+id/btnDot"
+        style="@style/LabKey"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:text="."
+        app:layout_constraintEnd_toStartOf="@+id/btn0"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn1" />
+
+    <Button
+        android:id="@+id/btn0"
+        style="@style/LabKey"
+        android:layout_marginTop="36dp"
+        android:text="0"
+        app:layout_constraintEnd_toStartOf="@+id/btnEq"
+        app:layout_constraintStart_toEndOf="@+id/btnDot"
+        app:layout_constraintTop_toBottomOf="@+id/btn2" />
+
+    <Button
+        android:id="@+id/btnEq"
+        style="@style/LabKey"
+        android:layout_marginTop="36dp"
+        android:text="="
+        app:layout_constraintEnd_toStartOf="@+id/btnMinus"
+        app:layout_constraintStart_toEndOf="@+id/btn0"
+        app:layout_constraintTop_toBottomOf="@+id/btn3" />
+
+    <Button
+        android:id="@+id/btnMinus"
+        style="@style/LabKey"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:text="&#8722;"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnEq"
+        app:layout_constraintTop_toBottomOf="@+id/btnPlus" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
