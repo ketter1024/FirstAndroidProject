@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Lab 3 - experiment 2: the screen that shows the custom AlertDialog. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lab_content_bg"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/LabTitleBar">
+
+        <TextView
+            style="@style/LabTitleText"
+            android:text="@string/title_lab3_dialog" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnShowDialog"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:background="@color/lab_teal"
+        android:text="@string/btn_show_dialog"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</LinearLayout>

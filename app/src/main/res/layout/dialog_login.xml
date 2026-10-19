@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Lab 3 - experiment 2: the custom layout handed to AlertDialog.Builder.setView().
+
+    It only contains the dialog *content*:
+
+        +=================================+
+        |  ANDROID APP  (orange header)   |
+        +=================================+
+        |  Username   (EditText)          |
+        |  Password   (EditText, dots)    |
+        +=================================+
+
+    The Cancel / Sign in buttons are NOT here on purpose: they are added by
+    Builder.setNegativeButton() / setPositiveButton(), which is what the
+    experiment asks for. If you want the two buttons to look exactly like the
+    screenshot (split evenly with a divider), put them in a horizontal
+    LinearLayout at the bottom of this file with layout_weight="1" each and add
+    them through setView() instead - see the write-up for that variant.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvDialogHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lab3_dialog_header"
+        android:gravity="center"
+        android:letterSpacing="0.12"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:text="@string/dialog_header"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lab3_dialog_body"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="16dp">
+
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="username"
+            android:hint="@string/dialog_username"
+            android:inputType="text"
+            android:maxLines="1"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:autofillHints="password"
+            android:hint="@string/dialog_password"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:minHeight="48dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

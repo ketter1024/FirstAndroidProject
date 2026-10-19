@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Lab 3 - experiment 4: the list the ActionMode works on.
+
+    This activity uses Theme.FirstProject.AppBar (a window action bar), because
+    only a window action bar is replaced *in place* when the contextual ActionMode
+    bar appears. The activity additionally pads this root with the bar height, see
+    fixContentUnderActionBar() in Insets.kt - without that, targetSdk 37's
+    edge-to-edge window would draw the action bar straight over the first rows.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/contentRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lab_content_bg"
+    android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/lvItems"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/lab3_row_divider"
+        android:dividerHeight="1dp" />
+
+</LinearLayout>

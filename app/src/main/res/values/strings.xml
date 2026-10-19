@@ -1,16 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">FirstProject</string>
 
-    <!-- Lab 2 entry screen -->
-    <string name="title_lab_menu">实验二 Android界面布局</string>
+    <!-- Entry screen -->
+    <string name="title_lab_menu">移动软件开发实验</string>
+    <string name="section_lab2">实验二　Android 界面布局</string>
+    <string name="section_lab3">实验三　Android 界面组件</string>
+
+    <!-- Lab 2 entry buttons -->
     <string name="menu_linear">1　线性布局 LinearLayout</string>
     <string name="menu_table">2　表格布局 TableLayout</string>
     <string name="menu_constraint1">3　约束布局1 ConstraintLayout（计算器）</string>
     <string name="menu_constraint2">4　约束布局2 ConstraintLayout（SpaceX）</string>
+
+    <!-- Lab 3 entry buttons -->
+    <string name="menu_lab3_list">1　ListView + SimpleAdapter</string>
+    <string name="menu_lab3_dialog">2　自定义布局的 AlertDialog</string>
+    <string name="menu_lab3_menu">3　XML 定义菜单</string>
+    <string name="menu_lab3_actionmode">4　上下文操作模式 ActionMode</string>
+    <string name="menu_lab3_recycler">5　RecyclerView 列表</string>
 
     <!-- Lab 2 activity labels -->
     <string name="title_linear_layout">LinearLayout</string>
     <string name="title_table_layout">TableLayout</string>
     <string name="title_constraint_layout1">ConstraintLayoutTest</string>
     <string name="title_constraint_layout2">SpaceX</string>
+
+    <!-- Lab 3 activity labels -->
+    <string name="title_lab3_list">ListView</string>
+    <string name="title_lab3_dialog">Custom AlertDialog</string>
+    <string name="title_lab3_menu">MenuTest</string>
+    <string name="title_lab3_actionmode">ActionMode</string>
+    <string name="title_lab3_recycler">RecyclerView</string>
+
+    <!-- Lab 3 - custom dialog -->
+    <string name="dialog_header">ANDROID APP</string>
+    <string name="dialog_username">Username</string>
+    <string name="dialog_password">Password</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_sign_in">Sign in</string>
+    <string name="btn_show_dialog">显示自定义对话框</string>
+
+    <!-- Lab 3 - menu -->
+    <string name="menu_font_size">字体大小</string>
+    <string name="menu_font_small">小</string>
+    <string name="menu_font_medium">中</string>
+    <string name="menu_font_large">大</string>
+    <string name="menu_normal">普通菜单项</string>
+    <string name="menu_font_color">字体颜色</string>
+    <string name="menu_color_red">红色</string>
+    <string name="menu_color_black">黑色</string>
+    <string name="test_text">用于测试的内容</string>
+
+    <!-- Lab 3 - action mode：%1$d 是当前选中的行数 -->
+    <string name="action_delete">删除</string>
+    <string name="action_mode_title">%1$d selected</string>
+
+    <!-- Lab 3 - misc -->
+    <string name="notification_text">你点击了列表项「%1$s」</string>
+    <string name="notification_no_permission">通知权限未授予，请到系统设置里打开</string>
+    <string name="menu_normal_toast">你点击了普通菜单项</string>
 </resources>

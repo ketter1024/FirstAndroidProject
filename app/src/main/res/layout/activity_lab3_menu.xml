@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Lab 3 - experiment 3: the screen for the XML-defined options menu.
+
+    This activity uses Theme.FirstProject.AppBar, so the title "MenuTest" comes
+    from android:label in AndroidManifest.xml and the three menu items show up in
+    the action bar's overflow menu (the three dots).
+
+    The one and only control is the test text. An EditText is used instead of a
+    TextView only because it draws the underline you can see in the experiment
+    screenshot; the menu changes its text size and text colour.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/contentRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lab_content_bg"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/etTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="text"
+        android:maxLines="1"
+        android:text="@string/test_text"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+</LinearLayout>

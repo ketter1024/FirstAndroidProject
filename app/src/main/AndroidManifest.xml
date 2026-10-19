@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Lab 3 - experiment 1 sends a notification, and on Android 13+ that is a
+         runtime permission, so it has to be declared here as well. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstProject">
 
-        <!-- Lab 2 entry screen, one button per experiment -->
+        <!-- Entry screen, one button per experiment -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -52,6 +56,42 @@
             android:exported="false"
             android:label="@string/title_constraint_layout2"
             android:theme="@style/Theme.FirstProject.SpaceX" />
+
+        <!-- Lab 3 - experiment 1, ListView + SimpleAdapter + Toast + Notification -->
+        <activity
+            android:name=".Lab3ListActivity"
+            android:exported="false"
+            android:label="@string/title_lab3_list"
+            android:theme="@style/Theme.FirstProject.Teal" />
+
+        <!-- Lab 3 - experiment 2, custom layout AlertDialog -->
+        <activity
+            android:name=".Lab3DialogActivity"
+            android:exported="false"
+            android:label="@string/title_lab3_dialog"
+            android:theme="@style/Theme.FirstProject.Teal" />
+
+        <!-- Lab 3 - experiment 3, XML options menu. The action bar is the Toolbar
+             inside the layout, promoted by setActionBar(). -->
+        <activity
+            android:name=".Lab3MenuActivity"
+            android:exported="false"
+            android:label="@string/title_lab3_menu"
+            android:theme="@style/Theme.FirstProject.AppBar" />
+
+        <!-- Lab 3 - experiment 4, contextual action bar over a ListView. -->
+        <activity
+            android:name=".Lab3ActionModeActivity"
+            android:exported="false"
+            android:label="@string/title_lab3_actionmode"
+            android:theme="@style/Theme.FirstProject.AppBar" />
+
+        <!-- Lab 3 - experiment 5, RecyclerView -->
+        <activity
+            android:name=".Lab3RecyclerActivity"
+            android:exported="false"
+            android:label="@string/title_lab3_recycler"
+            android:theme="@style/Theme.FirstProject.Teal" />
     </application>
 
 </manifest>

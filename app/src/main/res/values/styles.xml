@@ -78,4 +78,43 @@
         <item name="android:stateListAnimator">@null</item>
     </style>
 
+    <!--
+        Lab 3 - Android component experiments
+    -->
+
+    <!--
+        Teal title bar shared by the Lab 3 screens that use a NoActionBar theme.
+        fitsSystemWindows is on the wrapper (not on the TextView) so the teal
+        still paints behind the status bar without losing the horizontal padding,
+        exactly like the entry screen does it.
+    -->
+    <style name="LabTitleBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/lab_teal</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="LabTitleText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!-- Entry screen: a small grey heading above each group of buttons -->
+    <style name="LabSectionText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:textColor">@color/lab_text_dark</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Lab 3 - experiment 1: ListView + SimpleAdapter.
+    There is nothing on this screen except the list: every row is inflated from
+    res/layout/item_animal.xml by the SimpleAdapter.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lab_content_bg"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/LabTitleBar">
+
+        <TextView
+            style="@style/LabTitleText"
+            android:text="@string/title_lab3_list" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lvAnimals"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@color/lab3_row_divider"
+        android:dividerHeight="1dp" />
+
+</LinearLayout>

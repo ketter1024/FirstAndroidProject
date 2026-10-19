@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Lab 3 - the row layout for experiment 1 (ListView) and experiment 5
+    (RecyclerView). Both experiments show the same thing, so one layout file is
+    reused by both adapters:
+
+        TextView on the left, taking all the space that is left  -> android:layout_weight="1"
+        ImageView on the right, fixed 60dp square               -> scaleType="centerCrop"
+
+    The key names used by SimpleAdapter in Lab3ListActivity are "name" and "img";
+    they are mapped onto @id/tvName and @id/ivAnimal.
+
+    The background is NOT ?android:attr/selectableItemBackground any more: that one
+    draws the system's grey ripple, while lab3_item_ripple draws a red one. Both
+    only show while the finger is down, so a row never stays highlighted.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="88dp"
+    android:background="@drawable/lab3_item_ripple"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/lab_text_dark"
+        android:textSize="18sp"
+        tools:text="Lion" />
+
+    <ImageView
+        android:id="@+id/ivAnimal"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/lion" />
+
+</LinearLayout>

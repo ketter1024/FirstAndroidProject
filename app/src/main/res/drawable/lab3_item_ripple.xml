@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Lab 3 - the ripple background of one list row (used by item_animal.xml).
+
+    This is the "red flash on tap" version of ?android:attr/selectableItemBackground:
+    the content stays transparent, and while the finger is down a red ripple is
+    drawn on top of it. Release the finger and the row is white again - nothing
+    stays highlighted.
+
+    How a <ripple> is put together:
+
+      android:color   the ripple colour;
+      plain <item>    what is painted when the ripple is NOT active
+                      (here: transparent, so the row looks normal);
+      id="@android:id/mask"
+                      an invisible shape that limits where the ripple may paint.
+                      The ripple's spread is set with android:radius on THIS item.
+                      Leave it out and the ripple can paint over the whole row.
+
+    Works on API 21+ without AppCompat, i.e. straight in res/drawable.
+-->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/lab3_ripple_color">
+
+    <!-- 平时：透明，露出窗口背景 -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+
+    <!-- 涟漪的作用范围：整行矩形。radius 决定涟漪扩散到多大 -->
+    <item android:id="@android:id/mask">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/white" />
+        </shape>
+    </item>
+
+</ripple>

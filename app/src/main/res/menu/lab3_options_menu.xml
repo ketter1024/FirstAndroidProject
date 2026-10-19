@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Lab 3 - experiment 3: the options menu, defined in XML.
+
+    Structure on screen (the three-dot overflow button):
+
+        字体大小      >  小 / 中 / 大
+        普通菜单项
+        字体颜色      >  红色 / 黑色
+
+    The first and the third item are submenus, which is simply an <item> that
+    contains a nested <menu>. Their sub-items are the ones whose ids arrive in
+    onOptionsItemSelected(), not the parent ids.
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_font_size"
+        android:title="@string/menu_font_size">
+        <menu>
+            <item
+                android:id="@+id/menu_font_small"
+                android:title="@string/menu_font_small" />
+            <item
+                android:id="@+id/menu_font_medium"
+                android:title="@string/menu_font_medium" />
+            <item
+                android:id="@+id/menu_font_large"
+                android:title="@string/menu_font_large" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/menu_normal"
+        android:title="@string/menu_normal" />
+
+    <item
+        android:id="@+id/menu_font_color"
+        android:title="@string/menu_font_color">
+        <menu>
+            <item
+                android:id="@+id/menu_color_red"
+                android:title="@string/menu_color_red" />
+            <item
+                android:id="@+id/menu_color_black"
+                android:title="@string/menu_color_black" />
+        </menu>
+    </item>
+
+</menu>

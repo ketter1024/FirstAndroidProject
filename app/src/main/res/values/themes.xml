@@ -31,4 +31,29 @@
         <item name="android:windowBackground">@color/lab_content_bg</item>
     </style>
 
+    <!--
+        Lab 3 - the two screens that need a real action bar:
+
+          * the XML menu experiment, whose menu items appear in the overflow menu;
+          * the ActionMode experiment, whose contextual bar replaces it.
+
+        This is the *window* action bar, because only a window action bar gets
+        replaced in place by the contextual ActionMode bar - a Toolbar that lives
+        inside the layout does not, the framework would draw the contextual bar as
+        an extra strip above it.
+
+        The price: targetSdk 37 forces edge-to-edge, so the window lays the
+        content out from y=0 and the action bar ends up covering the top of it.
+        Both activities therefore call WindowCompat.setDecorFitsSystemWindows()
+        and fall back to padding the content by the bar height if that is ignored
+        (see padForActionBar() in each of them).
+    -->
+    <style name="Theme.FirstProject.AppBar" parent="android:Theme.Material.Light.DarkActionBar">
+        <!--
+            上下文操作栏最左边那个"退出"按钮：新版本默认画成返回箭头 ←，
+            讲义截图里是 ✓。换回对勾，跟上讲义一致。
+        -->
+        <item name="android:actionModeCloseDrawable">@drawable/ic_action_mode_close</item>
+    </style>
+
 </resources>

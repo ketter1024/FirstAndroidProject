@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Lab 3 - experiment 4: the items shown in the contextual action bar.
+
+    showAsAction="always" puts the icon directly in the bar instead of in its
+    overflow menu. The tick on the far left of the action bar is not one of
+    these items - it is the system's own "leave this mode" button.
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_delete"
+        android:icon="@drawable/ic_delete"
+        android:showAsAction="always"
+        android:title="@string/action_delete" />
+
+</menu>

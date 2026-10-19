@@ -36,4 +36,18 @@
     <color name="lab_tab_selected">#FFE0E0E0</color>
     <color name="lab_tab_text">#FF757575</color>
     <color name="lab_tab_divider">#FFC8C8C8</color>
+
+    <!-- Lab 3 - Android component experiments -->
+    <!-- ListView rows -->
+    <color name="lab3_row_divider">#FFE0E0E0</color>
+    <!-- 点中一行时那一闪的红色（涟漪用，松手就恢复） -->
+    <color name="lab3_ripple_color">#FF8B1A1A</color>
+
+    <!-- Toolbar that hosts the XML menu and the ActionMode bar (same dark tone
+         as the screenshots in the experiment handout) -->
+    <color name="lab3_actionbar_bg">#FF2B2B2B</color>
+
+    <!-- Custom AlertDialog: header sampled from the experiment screenshot -->
+    <color name="lab3_dialog_header">#FFFEBA32</color>
+    <color name="lab3_dialog_body">#FFF4F4F4</color>
 </resources>
